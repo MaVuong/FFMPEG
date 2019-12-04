@@ -10,7 +10,7 @@ async function main() {
     secure: false,
     auth: {
       user: 'ffmpeg.rp@gmail.com',
-      pass: 'videorender'
+      pass: vscode_render
     }
   });
 
