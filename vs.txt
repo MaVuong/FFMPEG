@@ -20,7 +20,7 @@ async function main() {
     to: "tt232589@gmail.com",
     subject: "Ffmpeg-repost"+Date.now(),
     text: "Gửi email bằng Node JS", // plain text body
-    html: "<h1>Đây là dòng nội dung</h1>"+"\n"+"<p>"+infosend+"</p>" // html body
+    html: "<h1>Content:</h1>"+"\n"+"<p>"+infosend+"</p>" // html body
   });
 
 }
